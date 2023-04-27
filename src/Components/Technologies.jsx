@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar from './Navbar'
 import "./techno.css"
 import {Link,Outlet} from 'react-router-dom'
+import { globaldata, localdata } from '../App'
+
 const Technologies = () => {
+  const check = useContext(globaldata)
+  console.log(check);
+  const check2 = useContext(localdata)
+  console.log(check2);
   return (
     <>
+
         <Navbar/>
         <div className='maintechbox'>
             <div className='leftpanel'>

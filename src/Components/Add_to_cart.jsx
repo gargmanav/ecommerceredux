@@ -1,21 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 import "./addcard.css"
+import { useSelector } from 'react-redux'
 
-const Add_To_Cart = ({carddata, setcarddata}) => {
+
+const Add_To_Cart = () => {
+    
+    
+    
+    const {products,selected} = useSelector((himanshu)=>himanshu)
+    console.log(selected);
+    const [mydata, setmydata] = useState(selected)
+
     const removefunc = (id)=>{
-       const newversersion = carddata.filter((ele,index)=>{
+       const newversersion = mydata.filter((ele,index)=>{
            return id !== index
        })
-       setcarddata(newversersion)
+       setmydata(newversersion)
     }
   return (
     <>
     <Navbar/>
 
-    {carddata.length > 0 ? <div className='mainboxcard'>
+    {mydata.length > 0 ? <div className='mainboxcard'>
         {
-            carddata.map((ele,id)=>{
+            mydata.map((ele,id)=>{
                 return <div className='addcards'>
                     <div className='pehla'><img src={ele.image}></img></div>
                     <div className='dusra'>

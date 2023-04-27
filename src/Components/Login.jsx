@@ -7,7 +7,7 @@ var style = {
   margin: "150px auto",
   textAlign: "center",
 };
-function Login({logdata,setlogdata}) {
+function Login({logdata}) {
   const [user, setUser] = useState({
     name: "",
     password: "",
@@ -17,7 +17,7 @@ function Login({logdata,setlogdata}) {
     if (
       (user.name === "admin" && user.password === "admin")
     ) {
-    setlogdata(true)
+  
     } else {
       alert("Enter Proper Credentials");
     }

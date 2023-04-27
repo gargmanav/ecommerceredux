@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="homebox">
+      <div className="homebox" style={{padding:"20px"}}>
       <h1>Home</h1>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
